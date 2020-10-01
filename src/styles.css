@@ -17,3 +17,6 @@ form{
 .container .row .col-4{
     margin-bottom: 20px;
 }
+.star{
+    color: red;
+}
