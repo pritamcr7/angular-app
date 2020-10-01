@@ -44,11 +44,7 @@
         Onshore
        </label>
       </div><br>
-<!--
-      <div *ngIf="f.location.untouched && f.location.invalid" class="alert alert-danger">
-        <div *ngIf="f.location.errors.required">Name is required.</div>
-    </div>
-  -->  
+
 
 
       <select *ngIf="offshore_location.untouched && offshore_location.invalid" class="form-control incorrect_form">
@@ -69,99 +65,21 @@
 
 
 
-      <div class="container">
-        <div class="row">
-        <div class="col-4" *ngFor="let i of skills_array;index as j">
-          
-          <input formControlName="skills" [value]="i" class="form-check-input" type="checkbox" id="defaultCheck{{j+1}}">
-          <label class="form-check-label" for="defaultCheck{{j+1}}">
-            {{i}}
-          </label>
-        </div>
-      </div>
-      </div>
-      <div *ngIf="list_skills.untouched && list_skills.invalid" class="alert alert-danger">
-        <div *ngIf="list_skills.errors.required">Please Select Minimum 5 Skills</div>
+    <div class="container">
+      <div class="row">
+    <div class="col-4" *ngFor="let CountryData of AllSkills; index as j">
+      <label class="form-check-label">
+        <input type="checkbox" formControlName="country" [value]="CountryData.value" (click)="onCheckboxChange($event)" />
+        {{CountryData.name}}
+      </label>
+    </div> 
+  </div>
+</div>
+    
+    <div class="alert alert-danger" *ngIf="this.form.controls['checkArray'].value.length==0||this.form.controls['checkArray'].value.length==1||this.form.controls['checkArray'].value.length==2||this.form.controls['checkArray'].value.length==3||this.form.controls['checkArray'].value.length==4">
+      Select Minimum 5 Skills
     </div>
-      
-    <!--
-    <div class="form-check">
-        <div class="row">
-            <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          HTML5,CSS3,JS
-        </label>
-    </div>
-    <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Angular 8
-        </label>
-    </div>
-    <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-        <label class="form-check-label" for="defaultCheck3">
-          Express JS
-        </label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-        <label class="form-check-label" for="defaultCheck4">
-          SASS
-        </label>
-    </div>
-    <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-        <label class="form-check-label" for="defaultCheck5">
-          React JS
-        </label>
-    </div>
-        <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
-        <label class="form-check-label" for="defaultCheck6">
-          Node JS
-        </label>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
-        <label class="form-check-label" for="defaultCheck7">
-          ES5,ES6,ES7...
-        </label>
-    </div>
-    <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
-        <label class="form-check-label" for="defaultCheck8">
-          Veu JS
-        </label>
-    </div>
-        <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
-        <label class="form-check-label" for="defaultCheck9">
-          Mongo DB
-        </label>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
-        <label class="form-check-label" for="defaultCheck9">
-          Bootstrap 4
-        </label>
-    </div>
-        <div class="col">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
-        <label class="form-check-label" for="defaultCheck9">
-          Typescript
-        </label>
-    </div>
-        <div class="col"></div>
-    </div>
-      </div>-->
+    
       <br>
 
 
@@ -187,18 +105,5 @@
 
       <button [disabled]="!form.valid" type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;&nbsp;
       <button type="reset" class="btn btn-danger">Reset</button>
-
-
-      <div *ngFor="let CountryData of CountryData; let i=index">
-        <label>
-          <input type="checkbox" formControlName="country" [value]="CountryData.value" (click)="onCheckboxChange($event)" />
-          {{CountryData.name}}
-        </label>
-      </div> 
-      
-
-      <div *ngIf="min_country.untouched && min_country.invalid" class="alert alert-danger">
-        <div *ngIf="min_country.errors.required">Please Select Minimum 5 Skills</div>
-    </div>
 </form>
 

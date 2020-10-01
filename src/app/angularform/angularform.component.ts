@@ -30,7 +30,7 @@ export class AngularformComponent {
       CustomValidators.notSpace,
       CustomValidators.noSpecial
     ]),
-    'skills':new FormControl('',Validators.required),
+    
     'location':new FormControl('',Validators.required),
     'uploadprofile':new FormControl('',Validators.required),
     'comments':new FormControl('',Validators.required)
@@ -64,22 +64,17 @@ export class AngularformComponent {
         Validators.required,
         //CustomValidators.mincountry
       ]),
-      'skills':new FormControl('',Validators.required),
+      
     'location':new FormControl('',Validators.required),
     'uploadprofile':new FormControl('',Validators.required),
     'comments':new FormControl('',Validators.required),
-      checkArray: this.fb.array([])
+      checkArray: this.fb.array([], [Validators.required])
     })
   }
   arr1=["Chennai","Bengalore","Hyderabad","Pune","Kochi"];
   arr2=["US","Non US"];
-  skills_array=["HTML5,CSS3,JS","Angular 8","Express JS","SASS","React JS","Node JS","ES5,ES6,ES7...","Veu JS","Mongo DB","Bootstrap 4","Typescript"];
+  
   fav_skills=[];
-
-  
-  
-
-  
   
   get associate_name(){
     return this.form.get('associatename');
@@ -93,7 +88,6 @@ export class AngularformComponent {
   get offshore_location(){
     return this.form.get('location');
   }
-  
   get list_skills(){
     
     return this.form.get('skills');
@@ -111,12 +105,18 @@ get min_country(){
 }
   
 
-  CountryData: Array<any> = [
-    { name: 'IND', value: 'India' },
-    { name: 'AUS', value: 'Australia' },
-    { name: 'USA', value: 'America' },
-    { name: 'RUS', value: 'Rusia' },
-    { name: 'Eng', value: 'England' }
+  AllSkills: Array<any> = [
+    { name: 'HTML5,CSS3,JS', value: 'HTML' },
+    { name: 'Angular 8', value: 'Angular' },
+    { name: 'Express JS', value: 'Express' },
+    { name: 'SASS', value: 'Sass' },
+    { name: 'React JS', value: 'React' },
+    {name:'Node JS',value:'Node'},
+    {name:'ES5,ES6,ES7...',value:'ES'},
+    {name:'Veu JS',value:'Veu'},
+    {name:'Mongo DB',value:'Mongo'},
+    {name:'Bootstrap 4',value:'Bootstrap'},
+    {name:'Typescript',value:'Typescript'}
   ];
   
   onCheckboxChange(e) {

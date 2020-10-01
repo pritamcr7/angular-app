@@ -36,12 +36,6 @@ export class CustomValidators{
             
             }
 
-          /*  static mincountry(control:AbstractControl) : ValidationErrors | null {
-              if((control.value.checkArray as string).length>2)
-              return {mincountry:true}
-
-              return null;
-            }
-            */
+          
           
 }
