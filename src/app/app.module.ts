@@ -12,8 +12,6 @@ import { TableHeadComponent } from './table-head/table-head.component';
 import { TableBodyComponent } from './table-body/table-body.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AngularformComponent } from './angularform/angularform.component';
-import { NgformheaderComponent } from './ngformheader/ngformheader.component';
-import { NgformfooterComponent } from './ngformfooter/ngformfooter.component';
 
 
 
@@ -30,8 +28,8 @@ import { NgformfooterComponent } from './ngformfooter/ngformfooter.component';
     TableBodyComponent,
     ContactFormComponent,
     AngularformComponent,
-    NgformheaderComponent,
-    NgformfooterComponent,
+    
+    
     
     
   ],
