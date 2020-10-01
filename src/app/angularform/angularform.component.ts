@@ -93,11 +93,7 @@ export class AngularformComponent {
   get offshore_location(){
     return this.form.get('location');
   }
-  /*
-  get f(){
-    console.log(this.form.controls);
-    return this.form.controls;
-  }*/
+  
   get list_skills(){
     
     return this.form.get('skills');
