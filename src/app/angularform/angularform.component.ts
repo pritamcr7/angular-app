@@ -36,7 +36,41 @@ export class AngularformComponent {
     'comments':new FormControl('',Validators.required)
   });
   
-
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      'associatename':new FormControl('',[
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(30),
+        CustomValidators.noSpecial,
+        CustomValidators.notNumber
+      ]),
+      'associateid':new FormControl('',[
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(6),
+        CustomValidators.notSpace,
+        CustomValidators.noSpecial,
+        CustomValidators.notAlphabet
+      ]),
+      'projectid':new FormControl('',[
+        Validators.required,
+        Validators.minLength(12),
+        Validators.maxLength(12),
+        CustomValidators.notSpace,
+        CustomValidators.noSpecial
+      ]),
+      'country':new FormControl('',[
+        Validators.required,
+        //CustomValidators.mincountry
+      ]),
+      'skills':new FormControl('',Validators.required),
+    'location':new FormControl('',Validators.required),
+    'uploadprofile':new FormControl('',Validators.required),
+    'comments':new FormControl('',Validators.required),
+      checkArray: this.fb.array([])
+    })
+  }
   arr1=["Chennai","Bengalore","Hyderabad","Pune","Kochi"];
   arr2=["US","Non US"];
   skills_array=["HTML5,CSS3,JS","Angular 8","Express JS","SASS","React JS","Node JS","ES5,ES6,ES7...","Veu JS","Mongo DB","Bootstrap 4","Typescript"];
@@ -76,9 +110,11 @@ export class AngularformComponent {
     
     return this.form.get('comments');
   }
-
+get min_country(){
+  return this.form.get('country');
+}
   
-  form2: FormGroup;
+
   CountryData: Array<any> = [
     { name: 'IND', value: 'India' },
     { name: 'AUS', value: 'Australia' },
@@ -86,13 +122,9 @@ export class AngularformComponent {
     { name: 'RUS', value: 'Rusia' },
     { name: 'Eng', value: 'England' }
   ];
-  constructor(private fb: FormBuilder) {
-    this.form2 = this.fb.group({
-      checkArray: this.fb.array([])
-    })
-  }
+  
   onCheckboxChange(e) {
-    const checkArray: FormArray = this.form2.get('checkArray') as FormArray;
+    const checkArray: FormArray = this.form.get('checkArray') as FormArray;
   
     if (e.target.checked) {
       checkArray.push(new FormControl(e.target.value));
@@ -107,8 +139,8 @@ export class AngularformComponent {
       });
     }
    
-   console.log(this.form2.value.checkArray.length);
-   console.log("Pritam");
+   console.log(this.form.value.checkArray.length);
+   
   }
   
   

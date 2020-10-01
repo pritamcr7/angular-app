@@ -189,18 +189,16 @@
       <button type="reset" class="btn btn-danger">Reset</button>
 
 
+      <div *ngFor="let CountryData of CountryData; let i=index">
+        <label>
+          <input type="checkbox" formControlName="country" [value]="CountryData.value" (click)="onCheckboxChange($event)" />
+          {{CountryData.name}}
+        </label>
+      </div> 
       
-      
+
+      <div *ngIf="min_country.untouched && min_country.invalid" class="alert alert-danger">
+        <div *ngIf="min_country.errors.required">Please Select Minimum 5 Skills</div>
+    </div>
 </form>
 
-<form [formGroup]="form2" novalidate>
-
-  <div *ngFor="let CountryData of CountryData; let i=index">
-    <label>
-      <input type="checkbox" [value]="CountryData.value" (click)="onCheckboxChange($event)" />
-      {{CountryData.name}}
-    </label>
-  </div>
-
-  
-</form>
