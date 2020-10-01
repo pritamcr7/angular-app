@@ -108,6 +108,7 @@ export class AngularformComponent {
     }
    
    console.log(this.form2.value.checkArray.length);
+   console.log("Pritam");
   }
   
   
