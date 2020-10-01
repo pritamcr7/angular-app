@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedService} from '../shared/shared.service';
 
 @Component({
   selector: 'app-ngformheader',
@@ -7,9 +8,94 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgformheaderComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private shared:SharedService) { }
+ temp={
+  Name:"",
+  ID:0,
+  Skills:"",
+  Project:"",
+  HCM:""
+}
   ngOnInit(): void {
   }
-
+  array2=[
+    {
+      "Name": "John Mathews",
+      "ID": 123456,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Pasupuleti Rohith",
+      "ID": 127456,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Sabarna Choudhary",
+      "ID": 122091,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Divya Ghosal",
+      "ID": 178456,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Ishika Dutta",
+      "ID": 104956,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Surajit Rana",
+      "ID": 125636,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Subrata Dey",
+      "ID": 124526,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Sourav Deshmukh",
+      "ID": 122230,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Srikanth Verada",
+      "ID": 190556,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    },
+    {
+      "Name": "Shreya Chatterjee",
+      "ID": 151256,
+      "Skills": "ReactJS,AngularJS",
+      "Project": "Cognizant Internal",
+      "HCM": "Alex"
+    }
+  ];
+  addStudent(){
+    this.temp.Name=this.shared.getMessage1();
+    this.temp.ID=this.shared.getMessage2();
+    this.temp.Skills=this.shared.getMessage3();
+    this.temp.Project=this.shared.getMessage4();
+    this.temp.HCM=this.shared.getMessage5();
+    this.array2.push(this.temp);
+  }
 }

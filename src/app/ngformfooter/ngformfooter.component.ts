@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {SharedService} from '../shared/shared.service'
 @Component({
   selector: 'app-ngformfooter',
   templateUrl: './ngformfooter.component.html',
@@ -7,9 +7,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgformfooterComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private shared:SharedService) { }
+  student={
+    Name:"",
+    ID:0,
+    Skills:"",
+    Project:"",
+    HCM:""
   }
-
+  ngOnInit(): void {
+    
+    
+    
+    
+    
+   
+  }
+  log1(student_name){
+    this.student.Name=student_name.value;
+    this.shared.setMessage1(this.student.Name);
+    console.log(this.student.Name);
+  }
+  log2(student_id){
+    this.student.ID=parseInt(student_id.value);
+    this.shared.setMessage2(this.student.ID);
+    console.log(this.student.ID);
+  }
+  log3(student_skills){
+    this.student.Skills=student_skills.value;
+    this.shared.setMessage3(this.student.Skills);
+    console.log(this.student.Skills);
+  }
+  log4(student_project){
+    this.student.Project=student_project.value;
+    this.shared.setMessage4(this.student.Project);
+    console.log(this.student.Project);
+  }
+  log5(student_hcm){
+    this.student.HCM=student_hcm.value;
+    this.shared.setMessage5(this.student.HCM);
+    console.log(this.student.HCM);
+    console.log(this.student);
+  }
+  
 }

@@ -1,1 +1,13 @@
-<p>ngformfooter works!</p>
+<form action="" method="POST">
+    <label>Name:</label>
+    <input ngModel name="student_name" #student_name="ngModel" (change)="log1(student_name)" type="text" name="student-name" id="sname" placeholder="Name">&nbsp;
+    <label>ID:</label>
+    <input ngModel name="student_id" #student_id="ngModel" (change)="log2(student_id)" type="text" name="student-roll" id="sid" placeholder="ID">&nbsp;
+    <label>Skills:</label>
+    <input ngModel name="student_skills" #student_skills="ngModel" (change)="log3(student_skills)" type="text" name="student-department" id="sskills" placeholder="Skills">&nbsp;
+    <label>Project:</label>
+    <input ngModel name="student_project" #student_project="ngModel" (change)="log4(student_project)" type="text" name="student-roll" id="sproject" placeholder="Project Details">&nbsp;
+    <label>HCM:</label>
+    <input ngModel name="student_hcm" #student_hcm="ngModel" (change)="log5(student_hcm)" type="text" name="student-roll" id="shcm" placeholder="HCM">&nbsp;&nbsp;
+    
+</form>
