@@ -1,0 +1,13 @@
+
+    <tr *ngFor="let i of array2;index as j">
+        <td>{{j+1}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.ID}}</td>
+        <td>{{i.Skills}}</td>
+        <td>{{i.Project}}</td>
+        <td>{{i.HCM}}</td>
+        <td><button type="button" (click)="onremove(i)" class="btn btn-danger">Delete
+            
+        </button></td>
+    </tr> 
+

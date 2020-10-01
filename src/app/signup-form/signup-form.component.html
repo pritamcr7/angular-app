@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+            formControlName="username"
+            id="username" 
+            type="text" 
+            class="form-control">
+            <small *ngIf="user_name.touched && user_name.invalid" class="form-text text-danger font-weight-bold">
+                <div *ngIf="user_name.errors.required">Username is Required</div>
+                <div *ngIf="user_name.errors.minlength">Username should have a Minimum Of {{user_name.errors.minlength.requiredLength}} Characters</div>
+                <div *ngIf="user_name.errors.maxlength">Username should have a Maximum Of {{user_name.errors.maxlength.requiredLength}} Characters</div>
+                <div *ngIf="user_name.errors.notSpace">Username cannot contain Space</div>
+                <div *ngIf="user_name.errors.noSpecial">Username cannot contain Special Characters</div>
+            </small>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+            formControlName="password"
+            id="password" 
+            type="text" 
+            class="form-control">
+            <small *ngIf="pass_word.touched && pass_word.invalid" class="form-text text-danger font-weight-bold">Password is Required</small>
+    </div>
+    <button [disabled]="!form.valid" class="btn btn-primary" type="submit">Sign Up</button>&nbsp;&nbsp;
+    
+
+    
+</form>

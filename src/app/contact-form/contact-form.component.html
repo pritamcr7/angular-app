@@ -1,0 +1,32 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div ngModelGroup="emailaddress">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ngModel name="emailID" #emailID="ngModel" (change)="log(emailID)" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-danger font-weight-bold" *ngIf="emailID.touched && !emailID.valid">
+          <div *ngIf="emailID.errors.required">Please Enter Email-ID</div>
+          <div *ngIf="emailID.errors.pattern">Not a valid Email ID</div>
+      </small>
+    </div>
+
+  </div>
+  <div ngModelGroup="passwordforemail">
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input ngModel name="pass" #pass="ngModel" (change)="log(pass)" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Select Location</label>
+    <select ngModel name="location" class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let i of location" [ngValue]="i">{{i.name}}</option>
+    </select>
+  </div>
+    <div class="form-group form-check">
+      <input ngModel name="isSubmitted" type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
+    <p>{{f.value|json}}</p>
+  </form>
