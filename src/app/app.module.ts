@@ -14,6 +14,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AngularformComponent } from './angularform/angularform.component';
 import { NgformheaderComponent } from './ngformheader/ngformheader.component';
 import { NgformfooterComponent } from './ngformfooter/ngformfooter.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 
@@ -32,6 +34,8 @@ import { NgformfooterComponent } from './ngformfooter/ngformfooter.component';
     AngularformComponent,
     NgformheaderComponent,
     NgformfooterComponent,
+    ParentComponent,
+    ChildComponent,
     
     
     
