@@ -1,3 +1,6 @@
+import { ZippyComponent } from './zippy/zippy.component';
+import { TodosComponent } from './todos/todos.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { CoursesService } from './couses.services';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,7 +39,8 @@ import { ChildComponent } from './child/child.component';
     NgformfooterComponent,
     ParentComponent,
     ChildComponent,
-    
+    TodosComponent,
+    ZippyComponent
     
     
     
@@ -45,7 +49,8 @@ import { ChildComponent } from './child/child.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CoursesService

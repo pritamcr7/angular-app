@@ -9,8 +9,23 @@ import {SharedService} from '../shared/shared.service';
 export class NgformheaderComponent implements OnInit {
 
   constructor(private shared:SharedService) { }
- 
-  ngOnInit(): void {
+  temp={
+    Name:"",
+    ID:0,
+    Skills:"",
+    Project:"",
+    HCM:""
+  }
+  ngOnInit(){
+    
+    
+    this.shared.currentMessage1.subscribe(message => this.temp.Name = message);
+    this.shared.currentMessage2.subscribe(message => this.temp.ID = message);
+    this.shared.currentMessage3.subscribe(message => this.temp.Skills = message);
+    this.shared.currentMessage4.subscribe(message => this.temp.Project = message);
+    this.shared.currentMessage5.subscribe(message => this.temp.HCM = message);
+    //this.array2.push(temp);
+    
   }
   array2=[
     {
@@ -84,6 +99,12 @@ export class NgformheaderComponent implements OnInit {
       "HCM": "Alex"
     }
   ];
+
+  addStudent(){
+    
+  this.array2.push(this.temp);
+  }
+  /*
   addStudent(){
     let temp={
       Name:"",
@@ -98,5 +119,5 @@ export class NgformheaderComponent implements OnInit {
     temp.Project=this.shared.getMessage4();
     temp.HCM=this.shared.getMessage5();
     this.array2.push(temp);
-  }
+  }*/
 }
