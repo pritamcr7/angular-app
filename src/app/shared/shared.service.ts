@@ -25,6 +25,81 @@ export class SharedService {
   private messageSource5 = new BehaviorSubject("default message5");
   currentMessage5 = this.messageSource5.asObservable();
   constructor() { }
+array=[
+  {
+    "Name": "John Mathews",
+    "ID": 123456,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Pasupuleti Rohith",
+    "ID": 127456,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Sabarna Choudhary",
+    "ID": 122091,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Divya Ghosal",
+    "ID": 178456,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Ishika Dutta",
+    "ID": 104956,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Surajit Rana",
+    "ID": 125636,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Subrata Dey",
+    "ID": 124526,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Sourav Deshmukh",
+    "ID": 122230,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Srikanth Verada",
+    "ID": 190556,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  },
+  {
+    "Name": "Shreya Chatterjee",
+    "ID": 151256,
+    "Skills": "ReactJS,AngularJS",
+    "Project": "Cognizant Internal",
+    "HCM": "Alex"
+  }
+];
+  getArray(){
+return this.array;
+  }
 /*
   setMessage1(data){
   this.message1=data;

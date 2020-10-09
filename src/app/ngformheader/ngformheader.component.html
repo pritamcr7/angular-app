@@ -7,6 +7,7 @@
         <th scope="col">Skills</th>
         <th scope="col">Project</th>
         <th scope="col">HCM</th>
+        <th scope="col">Delete Options</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +18,8 @@
             <td>{{i.Skills}}</td>
             <td>{{i.Project}}</td>
             <td>{{i.HCM}}</td>
+            <td><button class="btn btn-danger" (click)="onremove(i)">Delete</button></td>
             </tr>
     </tbody>
   </table>
-  <button class="btn btn-primary" (click)="addStudent()" type="button" id="modify">Add</button>
+  

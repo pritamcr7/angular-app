@@ -1,3 +1,6 @@
+import { UserService } from './shared/user.service';
+import { PostService } from './shared/post.service';
+
 import { ZippyComponent } from './zippy/zippy.component';
 import { TodosComponent } from './todos/todos.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -19,7 +22,10 @@ import { NgformheaderComponent } from './ngformheader/ngformheader.component';
 import { NgformfooterComponent } from './ngformfooter/ngformfooter.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
-
+import { PostsComponent } from './posts/posts.component';
+import {HttpClientModule} from '@angular/common/http';
+import { Rohit1Component } from './rohit1/rohit1.component';
+import { Rohit2Component } from './rohit2/rohit2.component';
 
 
 
@@ -40,7 +46,10 @@ import { ChildComponent } from './child/child.component';
     ParentComponent,
     ChildComponent,
     TodosComponent,
-    ZippyComponent
+    ZippyComponent,
+    PostsComponent,
+    Rohit1Component,
+    Rohit2Component
     
     
     
@@ -50,10 +59,13 @@ import { ChildComponent } from './child/child.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    PostService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
