@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {SharedService} from '../shared/shared.service';
-
+import { take } from 'rxjs/operators'
+import { of } from 'rxjs';
 @Component({
   selector: 'app-ngformheader',
   templateUrl: './ngformheader.component.html',
   styleUrls: ['./ngformheader.component.css']
 })
 export class NgformheaderComponent implements OnInit {
-
+array2;
   constructor(private shared:SharedService) { }
   temp={
     Name:"",
@@ -25,10 +26,17 @@ export class NgformheaderComponent implements OnInit {
     this.shared.currentMessage4.subscribe(message => this.temp.Project = message);
     this.shared.currentMessage5.subscribe(message => this.temp.HCM = message);*/
     //this.array2.push(temp);
+    this.shared.getArray()
+    .subscribe(data=>{
+      this.array2=data;
+    });
+    
     
   }
-  array2=this.shared.getArray();
+  
+  
   onremove(student){
+    console.log(this.array2);
     let index=this.array2.indexOf(student);
     this.array2.splice(index,1);
     }

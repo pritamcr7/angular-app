@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http'; 
 @Injectable({
   providedIn: 'root'
 })
@@ -24,8 +25,10 @@ export class SharedService {
 
   private messageSource5 = new BehaviorSubject("default message5");
   currentMessage5 = this.messageSource5.asObservable();
-  constructor() { }
-array=[
+  constructor(private http : HttpClient) { 
+    
+  }
+/*array=[
   {
     "Name": "John Mathews",
     "ID": 123456,
@@ -96,51 +99,21 @@ array=[
     "Project": "Cognizant Internal",
     "HCM": "Alex"
   }
-];
+];*/
+
   getArray(){
-return this.array;
+   return this.http.get('https://jsonblob.com/api/1ca32371-0c5c-11eb-89ae-290d760fdc10');
   }
-/*
-  setMessage1(data){
-  this.message1=data;
-  
-  }
-  getMessage1(){
-    
-    return this.message1;
-  }
+array2;
+setarr(arr){
+  console.log(arr);
+this.array2=arr;
+}
+getarr(){
+  return this.array2;
+}
 
-  setMessage2(data){
-    this.message2=data;
-    
-    }
-    getMessage2(){
-      return this.message2;
-    }
 
-    setMessage3(data){
-      this.message3=data;
-      
-      }
-      getMessage3(){
-        return this.message3;
-      }
-
-      setMessage4(data){
-        this.message4=data;
-        
-        }
-        getMessage4(){
-          return this.message4;
-        }
-
-        setMessage5(data){
-          this.message5=data;
-          
-          }
-          getMessage5(){
-            return this.message5;
-          }*/
           changeMessage1(message: string) {
             this.messageSource1.next(message);
           }

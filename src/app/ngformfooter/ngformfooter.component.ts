@@ -8,8 +8,14 @@ import {SharedService} from '../shared/shared.service'
 export class NgformfooterComponent implements OnInit {
 
   constructor(private shared:SharedService) { }
-  
+  array2;
   ngOnInit(){
+    this.shared.getArray().subscribe(data=>{
+      this.array2=data;
+    });
+ 
+
+
     /*
     this.shared.currentMessage1.subscribe(message => this.student.Name = message);
     this.shared.currentMessage2.subscribe(message => this.student.ID = message);
@@ -74,7 +80,8 @@ export class NgformfooterComponent implements OnInit {
     this.shared.changeMessage3(student.Skills);
     this.shared.changeMessage4(student.Project);
     this.shared.changeMessage5(student.HCM);
-    this.shared.getArray().push(student);
+    this.array2.push(student);
+    console.log(this.array2);
   }
   
 }

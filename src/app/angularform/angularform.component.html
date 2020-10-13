@@ -104,7 +104,10 @@
 
     
 
-      <button [disabled]="!form.valid" type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;&nbsp;
+      <button [disabled]="!form.valid" (click)="onsubmit()" type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;&nbsp;
       <button type="reset"  class="btn btn-danger">Reset</button>
+      <div *ngIf="form.valid" class="alert alert-success" role="alert">
+        The Form is Filled Correctly
+      </div>
 </form>
 

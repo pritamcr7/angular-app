@@ -138,6 +138,9 @@ get min_country(){
    console.log(this.form.value.checkArray.length);
    
   }
+  onsubmit(){
+    console.log(this.form.value);
+  }
   
   
   
