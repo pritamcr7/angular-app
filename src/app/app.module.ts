@@ -23,9 +23,11 @@ import { NgformfooterComponent } from './ngformfooter/ngformfooter.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { PostsComponent } from './posts/posts.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Rohit1Component } from './rohit1/rohit1.component';
 import { Rohit2Component } from './rohit2/rohit2.component';
+import { GeneticChild1Component } from './genetic-child1/genetic-child1.component';
+import { GeneticChild2Component } from './genetic-child2/genetic-child2.component';
 
 
 
@@ -49,7 +51,9 @@ import { Rohit2Component } from './rohit2/rohit2.component';
     ZippyComponent,
     PostsComponent,
     Rohit1Component,
-    Rohit2Component
+    Rohit2Component,
+    GeneticChild1Component,
+    GeneticChild2Component
     
     
     

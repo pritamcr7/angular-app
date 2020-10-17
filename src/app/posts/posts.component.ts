@@ -14,13 +14,14 @@ posts:any;
     
    }
    ngOnInit(){
+     /*
     this.service.getPost()
     .subscribe(response=>{
       this.posts=response;
       console.log(this.posts);
-    });
+    });*/
    }
-
+/*
   createPost(title:HTMLInputElement){
     let post={title:title.value};
     title.value='';
@@ -45,5 +46,5 @@ deletePost(i){
     let index=this.posts.indexOf(i);
     this.posts.splice(index,1);
   })
-}
+}*/
 }
