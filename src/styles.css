@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+form{
+    padding: 50px;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+
+.form-control-file.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+.incorrect_form{
+    border: 2px solid red;
+}
+.container .row .col-4{
+    margin-bottom: 20px;
+}
+.star{
+    color: red;
+}
+ 

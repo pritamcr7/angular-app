@@ -1,0 +1,16 @@
+<form>
+<label for="num1">First Number:</label>&nbsp;&nbsp;
+  <input (keyup.enter)="onkeyup1($event)" type="text" id="num1" name="num1"><br><br>
+
+  <label for="num2">Second Number:</label>&nbsp;&nbsp;
+  <input (keyup.enter)="onkeyup2($event)" type="text" id="num2" name="num2"><br><br>
+
+
+  <button (click)="add()" type="button" class="btn btn-primary">Add</button>&nbsp;&nbsp;
+  <button (click)="sub()" type="button" class="btn btn-primary">Subtract</button>&nbsp;&nbsp;
+  <button (click)="mul()" type="button" class="btn btn-primary">Multiply</button>&nbsp;&nbsp;
+  <button (click)="div()" type="button" class="btn btn-primary">Divide</button>
+  <br><br>
+  Result:<span class="result">{{result}}</span>
+
+</form>

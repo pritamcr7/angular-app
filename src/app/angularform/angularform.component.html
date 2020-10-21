@@ -1,0 +1,113 @@
+<h2>Form Validation&nbsp;&nbsp;<span class="star" *ngIf="!form.valid">*</span></h2>
+<form [formGroup]="form">
+    <div class="form-group">
+        <input formControlName="associatename" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Associate Name">
+        <small *ngIf="associate_name.touched && associate_name.invalid" class="form-text text-danger font-weight-bold">
+            <div *ngIf="associate_name.errors.required">Please Enter Associate Name</div>
+            
+          <div *ngIf="associate_name.errors.minlength||associate_name.errors.maxlength||associate_name.errors.notNumber||associate_name.errors.noSpecial">Accepts Alphabets, space & Min 5 to Max 30 Char</div>
+          </small>
+    </div><br>
+
+
+
+    <div class="form-group">
+        <input formControlName="associateid" type="Aid" class="form-control" id="exampleFormControlInput2" placeholder="Associate Id">
+        <small *ngIf="associate_id.touched && associate_id.invalid" class="form-text text-danger font-weight-bold">
+            <div *ngIf="associate_id.errors.required">Please Enter Associate Id</div>
+            <div *ngIf="associate_id.errors.minlength||associate_id.errors.maxlength||associate_id.errors.notAlphabet||associate_id.errors.noSpecial||associate_id.errors.notSpace">Invalid Associate Id</div>
+        </small>
+    </div><br>
+
+
+    
+    <div class="form-group">
+        <input formControlName="projectid" type="Pid" class="form-control" id="exampleFormControlInput3" placeholder="Project ID">
+        <small *ngIf="project_id.touched && project_id.invalid" class="form-text text-danger font-weight-bold">
+            <div *ngIf="project_id.errors.required">Please Enter Project Id</div>
+            <div *ngIf="project_id.errors.minlength||project_id.errors.maxlength||project_id.errors.noSpecial||project_id.errors.notSpace">Invalid Project Id</div>
+        </small>
+    </div><br>
+
+
+   
+    <div class="form-check">
+        <input formControlName="location" class="form-check-input" type="radio" name="location" id="exampleRadios1" value="option1">
+        <label class="form-check-label" for="exampleRadios1">
+          Offshore
+        </label>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input formControlName="location" class="form-check-input" type="radio" name="location" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+        Onshore
+       </label>
+      </div><br>
+
+
+
+      <select *ngIf="offshore_location.untouched && offshore_location.invalid" class="form-control incorrect_form">
+        <option>Select Location</option>
+        </select>
+        <small *ngIf="offshore_location.untouched && offshore_location.invalid" class="form-text text-danger font-weight-bold">
+          <div *ngIf="offshore_location.errors.required">Please Select Location</div>
+        </small>
+
+      <select *ngIf="offshore_location.value==='option1'" class="form-control">
+        <option *ngFor="let a of arr1">{{a}}</option>
+
+      </select>
+      <select *ngIf="offshore_location.value==='option2'" class="form-control">
+        <option *ngFor="let a of arr2">{{a}}</option>
+
+      </select><br>
+
+
+
+    <div class="container">
+      <div class="row">
+    <div class="col-4" *ngFor="let CountryData of AllSkills; index as j">
+      <label class="form-check-label">
+        <input type="checkbox" formControlName="country" [value]="CountryData.value" (click)="onCheckboxChange($event)" />
+        {{CountryData.name}}
+      </label>
+    </div> 
+  </div>
+</div>
+
+    <div class="alert alert-danger" *ngIf="this.form.controls['checkArray'].value.length==0||this.form.controls['checkArray'].value.length==1||this.form.controls['checkArray'].value.length==2||this.form.controls['checkArray'].value.length==3||this.form.controls['checkArray'].value.length==4">
+      
+      Select Minimum 5 Skills
+    </div>
+    
+      <br>
+
+
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Upload Profile</label>
+        <input formControlName="uploadprofile" type="file" class="form-control-file" id="exampleFormControlFile1">
+        <small *ngIf="upload_profile.touched && upload_profile.invalid" class="form-text text-danger font-weight-bold">
+          <div *ngIf="upload_profile.errors.required">Please Enter Profile Picture</div>
+      </small>
+      </div><br>
+
+
+    
+      <div class="form-group">
+        <textarea formControlName="comments" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Comments"></textarea>
+        <small *ngIf="comments_form.touched && comments_form.invalid" class="form-text text-danger font-weight-bold">
+          <div *ngIf="comments_form.errors.required">Please Enter Comments</div>
+      </small>
+      </div><br>
+
+
+    
+
+      <button [disabled]="!form.valid" (click)="onsubmit()" type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;&nbsp;
+      <button type="reset"  class="btn btn-danger">Reset</button>
+      <div *ngIf="form.valid" class="alert alert-success" role="alert">
+        The Form is Filled Correctly
+      </div>
+</form>
+

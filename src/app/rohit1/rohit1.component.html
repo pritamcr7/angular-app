@@ -1,0 +1,45 @@
+<!--<h1 class="text-center">{​​​​​{​​​​​pageTitle}​​​​​}​​​​​</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="bg-dark text-center text-white">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Company</th>
+ 
+            <th>Options</th>
+            
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let emp of users">
+            <td>{​​​​​{​​​​​emp.id}​​​​​}​​​​​</td>
+            <td>{​​​​​{​​​​​emp.name}​​​​​}​​​​​</td>
+            <td>{​​​​​{​​​​​emp.company}​​​​​}​​​​​</td>
+            
+            <td><span><button type="button" class="btn btn-warning" (click)="sendMessage()">Message</button>
+                <button type="button" class="btn btn-danger" (click)="onDelete(emp)">Delete</button>
+                <button type="button" class="btn btn-info" (click)="onEdit()">Edit</button>
+            </span>   
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="container" style="width: fit-content; float: left;">
+    <h4>Add New Employee</h4>
+    <form>
+            <label for = "empDetailsId">ID:</label>
+            <input class="form-control" type="text" id="empDetailsId" name="empDetailsId" />
+    
+            <label for = "empDetailsName">Name:</label>
+            <input class="form-control" type="text" id="empDetailsName" name="empDetailsName" />
+        
+            <label for = "empDetailsCompany">Company:</label>
+            <input class="form-control" type="text" id="empDetailsCompany" name="empDetailsCompany" />
+       
+       
+            <button type="button" class="btn btn-info" (click)="addEmp()">Add Employee</button>
+      
+    
+    </form>
+</div>-->

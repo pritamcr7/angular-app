@@ -1,0 +1,26 @@
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Serial No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">ID</th>
+        <th scope="col">Skills</th>
+        <th scope="col">Project</th>
+        <th scope="col">HCM</th>
+        <th scope="col">Delete Options</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of array2;index as j">
+            <td>{{j+1}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.ID}}</td>
+            <td>{{i.Skills}}</td>
+            <td>{{i.Project}}</td>
+            <td>{{i.HCM}}</td>
+            <td><button class="btn btn-danger" (click)="onremove(i)">Delete</button></td>
+            </tr>
+    </tbody>
+  </table>
+  
