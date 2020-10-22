@@ -7,34 +7,7 @@ import {FormArray,FormBuilder,FormGroup,FormControl, Validators} from '@angular/
   styleUrls: ['./angularform.component.css']
 })
 export class AngularformComponent {
-  form=new FormGroup({
-    'associatename':new FormControl('',[
-      Validators.required,
-      Validators.minLength(5),
-      Validators.maxLength(30),
-      CustomValidators.noSpecial,
-      CustomValidators.notNumber
-    ]),
-    'associateid':new FormControl('',[
-      Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(6),
-      CustomValidators.notSpace,
-      CustomValidators.noSpecial,
-      CustomValidators.notAlphabet
-    ]),
-    'projectid':new FormControl('',[
-      Validators.required,
-      Validators.minLength(12),
-      Validators.maxLength(12),
-      CustomValidators.notSpace,
-      CustomValidators.noSpecial
-    ]),
-    
-    'location':new FormControl('',Validators.required),
-    'uploadprofile':new FormControl('',Validators.required),
-    'comments':new FormControl('',Validators.required)
-  });
+  form;
   
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
