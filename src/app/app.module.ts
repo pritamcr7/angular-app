@@ -29,7 +29,7 @@ import { Rohit2Component } from './rohit2/rohit2.component';
 import { GeneticChild1Component } from './genetic-child1/genetic-child1.component';
 import { GeneticChild2Component } from './genetic-child2/genetic-child2.component';
 
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 
@@ -64,7 +64,21 @@ import { GeneticChild2Component } from './genetic-child2/genetic-child2.componen
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgCircleProgressModule.forRoot({
+      "backgroundColor": "#FDB900",
+      "radius": 70,
+      "maxPercent": 200,
+      "units": " Percent",
+      "unitsColor": "#483500",
+      "outerStrokeWidth": 5,
+      "outerStrokeColor": "#FFFFFF",
+      "innerStrokeColor": "#FFFFFF",
+      "titleColor": "#483500",
+      "subtitleColor": "#483500",
+      "showSubtitle": false,
+      "showInnerStroke": false,
+      "startFromZero": false})
   ],
   providers: [
     CoursesService,

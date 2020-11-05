@@ -30,3 +30,8 @@
     <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
     <p>{{f.value|json}}</p>
   </form>
+  <div align="center" style="margin-top:10%;">
+    <circle-progress [percent]="80"  [space]="-10" [radius]="100" [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10" [outerStrokeColor]="'#4882c2'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+      [animationDuration]="500"></circle-progress>
+  </div>
